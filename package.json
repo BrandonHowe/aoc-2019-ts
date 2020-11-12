@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A template for Advent of Code in TypeScript.",
   "main": "index.js",
+    "engines": {
+      "node": ">=12.0.0"
+    },
   "scripts": {
     "day1": "ts-node src/day1/index.ts",
     "day2": "ts-node src/day2/index.ts",
