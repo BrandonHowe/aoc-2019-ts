@@ -7,10 +7,13 @@ export const readInputRaw = (filepath: string): Promise<string> =>
     readFile(filepath, "utf-8");
 
 export const readInputSplit = async (filepath: string): Promise<string[]> =>
-    (await readFile(filepath, "utf-8")).split("\n");
+    (await readFile(filepath, "utf-8")).split("\n").filter(l => l !== "");
 
 export const readInputSplitNum = async (filepath: string): Promise<number[]> =>
-    (await readFile(filepath, "utf-8")).split("\n").map(Number);
+    (await readFile(filepath, "utf-8"))
+        .split("\n")
+        .filter(l => l !== "")
+        .map(Number);
 
 export const readInputGrid = async (filepath: string): Promise<string[][]> =>
     (await readFile(filepath, "utf-8")).split("\n").map(l => l.split(""));
